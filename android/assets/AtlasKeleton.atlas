@@ -1,0 +1,13 @@
+
+AtlasKeleton.png
+size: 512,128
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+TestKeleton1
+  rotate: false
+  xy: 2, 2
+  size: 387, 77
+  orig: 387, 77
+  offset: 0, 0
+  index: -1
