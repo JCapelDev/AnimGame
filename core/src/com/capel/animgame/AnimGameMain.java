@@ -113,7 +113,6 @@ public class AnimGameMain implements Screen {
                 skeleton.y += 120 * Gdx.graphics.getDeltaTime();
             }
 
-
         }else if (Gdx.input.isKeyPressed(Input.Keys.DOWN)) {
             if(facing){
                 game.spriteBatch.draw(walkAnimationRight.getKeyFrame(stateTime, true), skeleton.x, skeleton.y);
