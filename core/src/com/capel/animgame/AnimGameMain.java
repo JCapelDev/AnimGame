@@ -3,6 +3,7 @@ package com.capel.animgame;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
@@ -33,6 +34,8 @@ public class AnimGameMain implements Screen {
 
     boolean facing;
 
+    Music music;
+
     // A variable for tracking elapsed time for the animation
     float stateTime;
 
@@ -42,6 +45,10 @@ public class AnimGameMain implements Screen {
         walkSheet = new Texture(Gdx.files.internal("TestKeleton1.png"));
         backgroundTexture = new Texture("HOMAMBackground.png");
         backgroundSprite =new Sprite(backgroundTexture);
+
+        music = Gdx.audio.newMusic(Gdx.files.internal("Knight Town Theme.mp3"));
+
+        music.setLooping(true);
 
 
         TextureRegion[][] tmp = TextureRegion.split(walkSheet, walkSheet.getWidth() / FRAME_COLS, walkSheet.getHeight() / FRAME_ROWS);
@@ -95,6 +102,8 @@ public class AnimGameMain implements Screen {
 
     @Override
     public void show() {
+        music.setVolume(0.2f);
+        music.play();
 
     }
 
@@ -205,6 +214,7 @@ public class AnimGameMain implements Screen {
         public void dispose () {
 
             walkSheet.dispose();
+            music.dispose();
         }
 
         public void renderBackground() {
